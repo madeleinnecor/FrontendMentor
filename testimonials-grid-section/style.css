@@ -1,0 +1,158 @@
+:root {
+--moderate-violet: hsl(263, 55%, 52%);
+--very-dark-grayish-blue: hsl(217, 19%, 35%);
+--very-dark-blackish-blue: hsl(219, 29%, 14%);
+--white: hsl(0, 0%, 100%);
+--light-gray: hsl(0, 0%, 81%);
+--light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light-grayish-blue);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 13px;	
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4,30%);
+  grid-template-rows: repeat(2,290px);
+  grid-template-areas: 
+        "card1 card1 card2 card5"
+        "card3 card4 card4 card5";
+  gap:20px;
+  width: 600px;
+  color: var(--white);
+  margin:10px auto;
+}
+
+.card1, .card2, .card3,
+.card4, .card5 {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.03);
+}
+
+.quotation-icon {
+    position: absolute;
+    left:40%;
+    z-index: 1;
+}
+
+.card1 {
+  grid-area:card1;
+  background-color:var(--moderate-violet); 
+}
+
+.card2 {
+  grid-area:card2;
+  background-color:var(--very-dark-grayish-blue); 
+}
+
+.card3 {
+  grid-area:card3;
+  background-color:var(--white); 
+}
+
+.card4 {
+  grid-area:card4;
+  background-color:var(--very-dark-blackish-blue); 
+}
+
+.card5 {
+  grid-area:card5;
+  background-color:var(--white); 
+}
+
+.header-card {
+  display: flex;
+  align-items: center; 
+}
+
+.card-img {
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.border {
+  border: 3px solid #a65bbd;
+}
+
+.name {
+    color: var(--white);
+}
+
+.graduation {
+    color: var(--white);
+    --white: rgba(255, 255, 255, 0.5);
+}
+
+.testimony {
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 15px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.review {
+    font-size: 0.7rem;
+    line-height: 1.4;
+    color: var(--white);
+    --white: rgba(255, 255, 255, 0.7);
+}
+
+.card3 .testimony, .card3 .name,
+.card5 .testimony,  .card5 .name {
+    color: var(--very-dark-blackish-blue);
+}
+
+.card3 .graduation,
+.card5 .graduation {
+    color: var(--very-dark-grayish-blue);
+    --very-dark-grayish-blue: rgba(72, 85, 106, 0.5);
+}
+
+.card3 .review, 
+.card5 .review {
+    color: var(--very-dark-grayish-blue);
+    --very-dark-grayish-blue: rgba(72, 85, 106, 0.7);  
+}
+
+.attribution { 
+   font-size: 11px; 
+   text-align: center; 
+}
+
+.attribution a { 
+   color: hsl(228, 45%, 44%); 
+}
+
+@media (max-width: 400px) {
+  .card-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  }
+
+  .quotation-icon {
+  left: 60%;
+  }
+
+  .card1, .card2, .card3,
+  .card4, .card5 {
+   display: flex;
+  flex-direction: column;
+  } 
+}
